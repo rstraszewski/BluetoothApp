@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <ComboBox SelectionChanged="BluetoothRadioSelectionChanged" ItemsSource="{Binding Path = BluetoothRadios }" SelectedValue="{Binding Path=SelectedBluetoothRadio}" DisplayMemberPath="Name"  HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="165" Height="25"/>
+        <ComboBox SelectedValue="{Binding Path=SelectedBluetoothDevice}" ItemsSource="{Binding Path = BluetoothDevices }" DisplayMemberPath="DeviceName"  HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="165" Height="25" />
+        <Button Click="PairDevice" Content="Pair" Margin="10,130,432,157"/>
+        <Label Content="{ Binding Path=Info }" HorizontalAlignment="Left" FontSize="24" FontWeight="Bold" Margin="10,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <Button Click="SendFile" IsEnabled="{Binding Path=IsPaired}" Content="Send" Margin="100,130,342,157"/>
+
     </Grid>
 </Window>
+
